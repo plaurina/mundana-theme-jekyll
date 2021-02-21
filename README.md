@@ -1,51 +1,42 @@
-# Jekyll Theme - Mundana by WowThemes.net
+# Sub40Fi.com
 
-[Live Demo](https://wowthemesnet.github.io/mundana-theme-jekyll/) &nbsp; | &nbsp; 
-[Download](https://github.com/wowthemesnet/mundana-theme-jekyll/archive/master.zip) &nbsp; | &nbsp; 
-[Buy me a coffe](https://www.wowthemes.net/donate/) &nbsp; | &nbsp; [Documentation](https://bootstrapstarter.com/bootstrap-templates/mundana-theme-jekyll/) &nbsp; | &nbsp; 
-[WordPress version](https://www.wowthemes.net/themes/mundana-wordpress/) 
+## Basics
+This repo was generated following the tutorial at: [https://www.learnaws.org/2017/10/22/create-site-aws-using-s3/](https://www.learnaws.org/2017/10/22/create-site-aws-using-s3/)
 
-![mundana jekyll theme screenshot](assets/images/screenshot.jpg)
+### Running locally:
+> jekyll serve
 
-### Documentation
+### AWS
+#### Creating the initial S3 bucket
+> aws s3 mb s3://sub40fi.com
 
-[How to install & use](https://bootstrapstarter.com/bootstrap-templates/mundana-theme-jekyll/)
+Enable static website on that bucket
+> aws s3 website s3://sub40fi.com/ --index-document index.html
 
-### Contribute to Mundana repository
+create a file called `policy.json` and insert
+```json
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::sub40fi.com/*"
+        }
+    ]
+  }
+```
 
-1. In the top-right corner of this page, click **Fork**.
+Add the policy to the bucket
+> aws s3api put-bucket-policy --bucket sub40fi.com --policy file://policy.json
 
-2. Clone a copy of your fork on your local, replacing *YOUR-USERNAME* with your Github username.
-
-   `git clone https://github.com/YOUR-USERNAME/mundana-theme-jekyll.git`
-
-3. **Create a branch**: 
-
-   `git checkout -b <my-new-feature-or-fix>`
-
-4. **Make necessary changes and commit those changes**:
-
-   `git add .`
-
-   `git commit -m "new feature or fix"`
-
-5. **Push changes**, replacing `<add-your-branch-name>` with the name of the branch you created earlier at step #3. :
-
-   `git push origin <add-your-branch-name>`
-
-6. Submit your changes for review. Go to your repository on GitHub, you'll see a **Compare & pull request** button. Click on that button. Now submit the pull request.
-
-That's it! Soon I'll be merging your changes into the master branch of this project. You will get a notification email once the changes have been merged. Thank you for your contribution.
+Sync the site
+> aws s3 sync _site s3://sub40fi.com/ --delete
 
 
-### Copyright
+Go -
+[http://sub40fi.com.s3-website-us-east-1.amazonaws.com/](http://sub40fi.com.s3-website-us-east-1.amazonaws.com)
 
-Copyright (C) 2019 WowThemes.net.
 
-Theme designed and developed by [Sal](https://www.wowthemes.net), *free* under MIT license. 
-
-<a href="https://www.wowthemes.net/donate/" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
-
-### Live Demo
-
-[Live Demo](https://wowthemesnet.github.io/mundana-theme-jekyll/)
