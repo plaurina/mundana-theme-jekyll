@@ -1,12 +1,17 @@
 # Site
-name: 'Mundana'
-description: 'Mundana is a free Jekyll theme for awesome people like you, Medium like.'
+name: 'Sub40FI'
+description: >
+  A FIRE (Financial Independence Retire Early) blog where I share
+  my thoughts, analytics, decisions, triumphs and failures. From someone who thought
+  he could "retire first, then work the rest of his life" and then, at age 30, realized that was
+  a dumb idea and still became Financially Independent before 40.
+url: 'https://sub40fi.com'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
-baseurl: '/mundana-theme-jekyll'
-disqus: 'demowebsite'
+baseurl: ''
+disqus: 'sub40fi'
 email: 'wowthemesnet@gmail.com'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+#mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 
 include: ["_pages"]
 permalink: /:title/
@@ -19,21 +24,13 @@ plugins:
   - jekyll-seo-tag
   
 authors:
-    sal:
-      name:           Sal
-      site:           https://www.wowthemes.net
-      avatar:         /assets/images/avatar1.jpg
-      bio:            "Hi, I am Sal, the author of Mundana, the theme you're currently previewing. I hope you like it!"
-      email:          wowthemesnet@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
-
-    jane:
-      name:           Jane
-      site:           https://www.wowthemes.net
-      avatar:         /assets/images/avatar2.jpg
-      bio:            "Blogger, fashionista, love to explore new ideas and write on my morning coffee!"
-      email:          fakemail@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
+    pete:
+      name:           Pete
+      site:           https://LaurinaProperties.com
+      avatar:         assets/images/pete.png
+      bio:            "Software Engineer, Professional Debt Slayer, Real Estate Investor, Blogger, Purveyor of life experiences."
+      email:          Pete@RunDebtFree
+      twitter:        https://twitter.com/rundebtfree
  
 # Defaults
 defaults:
@@ -43,7 +40,7 @@ defaults:
       path: "_posts"
     values:
       layout: post
-      author: sal
+      author: pete
       avatar: /assets/images/avatar1.jpg
       
   # all pages
