@@ -3,7 +3,7 @@ layout: post
 title:  "Marriage & Millions"
 author: pete
 categories: [ marriage ]
-image: assets/images/2.jpg
+image: assets/images/10.jpg
 tags: featured
 ---
 
